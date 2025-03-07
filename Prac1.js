@@ -1,0 +1,51 @@
+// function deepClone(obj) {
+//     if (obj === null || typeof obj !== 'object') {
+//         return obj; // Return the value if it's not an object
+//     }
+
+//     if (Array.isArray(obj)) {
+//         return obj.map(item => deepClone(item)); // Recursively clone array items
+//     }
+
+//     const clonedObj = {};
+//     for (const key in obj) {
+//         if (obj.hasOwnProperty(key)) {
+//             clonedObj[key] = deepClone(obj[key]); // Recursively clone object properties
+//         }
+//     }
+
+//     return clonedObj;
+// }
+
+// // Example usage:
+// const original = {
+//     name: "John",
+//     age: 30,
+//     hobbies: ["reading", "traveling"],
+//     address: {
+//         city: "New York",
+//         zip: "10001"
+//     }
+// };
+
+// const cloned = deepClone(original);
+// cloned.address.city = "Los Angeles";
+// cloned.hobbies.push("gaming");
+
+// console.log(original); // Original object remains unchanged
+// console.log(cloned); // Cloned object with modifications
+
+function findIntersection(arr1, arr2) {
+    // Your code here
+    const intersection = [];
+    for(const item of arr1) {
+        if(arr2.includes(item)) {
+            intersection.push(item);
+        }
+    }
+    return intersection;
+}
+
+// Test
+console.log(findIntersection([1, 2, 3], [2, 3, 4])); // Expected output: [2, 3]
+console.log(findIntersection([5, 10, 15], [10, 15, 20])); // Expected output: [10, 15]
