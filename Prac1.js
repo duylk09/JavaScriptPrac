@@ -35,17 +35,40 @@
 // console.log(original); // Original object remains unchanged
 // console.log(cloned); // Cloned object with modifications
 
-function findIntersection(arr1, arr2) {
+// function findIntersection(arr1, arr2) {
+//     // Your code here
+//     const intersection = [];
+//     for(const item of arr1) {
+//         if(arr2.includes(item)) {
+//             intersection.push(item);
+//         }
+//     }
+//     return intersection;
+// }
+
+// // Test
+// console.log(findIntersection([1, 2, 3], [2, 3, 4])); // Expected output: [2, 3]
+// console.log(findIntersection([5, 10, 15], [10, 15, 20])); // Expected output: [10, 15]
+
+// function firstNonRepeatingChar(str) {
+//     // Your code here
+//     for(let char of str){
+//         if(str.indexOf(char) === str.lastIndexOf(char)){
+//             return char;
+//         }
+//     }
+//     return null;
+// }
+
+// // Test
+// console.log(firstNonRepeatingChar("aabbcde")); // Expected output: "c"
+// console.log(firstNonRepeatingChar("aabb")); // Expected output: null
+
+function sumOfDigits(num) {
     // Your code here
-    const intersection = [];
-    for(const item of arr1) {
-        if(arr2.includes(item)) {
-            intersection.push(item);
-        }
-    }
-    return intersection;
+    return num.toString().split('').reduce((acc, cur) => acc + Number(cur), 0);
 }
 
 // Test
-console.log(findIntersection([1, 2, 3], [2, 3, 4])); // Expected output: [2, 3]
-console.log(findIntersection([5, 10, 15], [10, 15, 20])); // Expected output: [10, 15]
+console.log(sumOfDigits(123)); // Expected output: 6 (1 + 2 + 3)
+console.log(sumOfDigits(987)); // Expected output: 24 (9 + 8 + 7)
