@@ -64,11 +64,36 @@
 // console.log(firstNonRepeatingChar("aabbcde")); // Expected output: "c"
 // console.log(firstNonRepeatingChar("aabb")); // Expected output: null
 
-function sumOfDigits(num) {
+// function sumOfDigits(num) {
+//     // Your code here
+//     return num.toString().split('').reduce((acc, cur) => acc + Number(cur), 0);
+// }
+
+// // Test
+// console.log(sumOfDigits(123)); // Expected output: 6 (1 + 2 + 3)
+// console.log(sumOfDigits(987)); // Expected output: 24 (9 + 8 + 7)
+
+// function removeFalsyValues(arr) {
+//     // Your code here
+//     return arr.filter(Boolean);
+// }
+
+// // Test
+// console.log(removeFalsyValues([0, 1, false, 2, "", 3, "hello", null, undefined])); 
+// // Expected output: [1, 2, 3, "hello"]
+function countFrequency(arr) {
     // Your code here
-    return num.toString().split('').reduce((acc, cur) => acc + Number(cur), 0);
+    const count = {};
+    for(const item of arr){
+        if(!(item in count)){
+            count[item] = 1;
+        } else {
+            count[item] +=1;
+        }
+    }
+    return count;
 }
 
 // Test
-console.log(sumOfDigits(123)); // Expected output: 6 (1 + 2 + 3)
-console.log(sumOfDigits(987)); // Expected output: 24 (9 + 8 + 7)
+console.log(countFrequency(["apple", "banana", "apple", "orange", "banana", "apple"])); 
+// Expected output: { apple: 3, banana: 2, orange: 1 }
