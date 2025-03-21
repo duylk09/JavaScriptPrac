@@ -83,15 +83,11 @@
 // // Expected output: [1, 2, 3, "hello"]
 function countFrequency(arr) {
     // Your code here
-    const count = {};
-    for(const item of arr){
-        if(!(item in count)){
-            count[item] = 1;
-        } else {
-            count[item] +=1;
-        }
-    }
-    return count;
+    return arr.reduce((acc, item) => {
+        acc[item] = (acc[item] || 0) + 1;
+        return acc;
+    },{})
+
 }
 
 // Test
